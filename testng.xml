@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="3" parallel="methods" name="Regression Suite: Contains generally all the blocker test cases">
+  <test thread-count="3" parallel="methods" name="SecuredMobility">
+    <classes>
+      <class name="org.example.testscripts.SecuredMobilityLogin">
+        <methods>
+          <include name="LoginTestCase"/>
+        </methods>
+      </class>
+      <class name="org.example.testscripts.SecuredMobilityCreateStudent">
+        <methods>
+          <include name="CreateStudentTestCase"/>
+        </methods>
+      </class>
+    </classes>
+  </test> <!-- SecuredMobility -->
+</suite> <!-- Regression Suite: Contains generally all the blocker test cases -->

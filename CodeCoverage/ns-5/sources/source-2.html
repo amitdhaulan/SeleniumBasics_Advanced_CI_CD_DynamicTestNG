@@ -1,0 +1,240 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > BaseTest</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">org.example.selenium.core</a>
+</div>
+
+<h1>Coverage Summary for Class: BaseTest (org.example.selenium.core)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">BaseTest</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (6/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    75%
+  </span>
+  <span class="absValue">
+    (39/52)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package org.example.selenium.core;
+&nbsp;
+&nbsp;import io.github.bonigarcia.wdm.WebDriverManager;
+&nbsp;import org.example.javacore.Details;
+&nbsp;import org.example.pages.LoginPage;
+&nbsp;import org.openqa.selenium.WebDriver;
+&nbsp;import org.openqa.selenium.chrome.ChromeDriver;
+&nbsp;import org.openqa.selenium.edge.EdgeDriver;
+&nbsp;import org.openqa.selenium.firefox.FirefoxDriver;
+&nbsp;import org.testng.annotations.AfterSuite;
+&nbsp;import org.testng.annotations.AfterTest;
+&nbsp;import org.testng.annotations.BeforeSuite;
+&nbsp;import org.testng.annotations.BeforeTest;
+&nbsp;
+&nbsp;import java.io.FileInputStream;
+&nbsp;import java.io.FileNotFoundException;
+&nbsp;import java.io.IOException;
+&nbsp;import java.net.URI;
+&nbsp;import java.net.URISyntaxException;
+&nbsp;import java.util.ArrayList;
+&nbsp;import java.util.Properties;
+&nbsp;
+&nbsp;import static org.example.javacore.UpdateConfigFile.changeAddProperty;
+&nbsp;
+&nbsp;
+<b class="fc">&nbsp;public class BaseTest/* implements ITestListener */ {</b>
+&nbsp;
+&nbsp;    public static ArrayList passedTestCases;
+&nbsp;    public static ArrayList failedTestCases;
+&nbsp;    public static ArrayList skippedTestCases;
+&nbsp;    protected static Properties properties;
+&nbsp;    static String browser;
+&nbsp;    static String team;
+&nbsp;    static String testCaseType;
+&nbsp;
+&nbsp;
+&nbsp;    public static WebDriver driver;
+&nbsp;    protected static Properties prop;
+&nbsp;    String username, password, URL;
+&nbsp;
+&nbsp;    /*  @BeforeSuite
+&nbsp;      public void createConfig() throws IOException, InterruptedException {
+&nbsp;
+&nbsp;      }*/
+&nbsp;    @BeforeTest()
+&nbsp;    public void setUp() throws IOException, InterruptedException, URISyntaxException {
+<b class="fc">&nbsp;        passedTestCases = new ArrayList();</b>
+<b class="fc">&nbsp;        failedTestCases = new ArrayList();</b>
+<b class="fc">&nbsp;        skippedTestCases = new ArrayList();</b>
+&nbsp;
+<b class="fc">&nbsp;        String url = &quot;https://admin-dev.smart-tag.net/Account/LoginSMART&quot;;</b>
+<b class="fc">&nbsp;        URI uri = new URI(url);</b>
+&nbsp;
+<b class="fc">&nbsp;        changeAddProperty(&quot;./src/config/config.properties&quot;, &quot;adminPassword&quot;, &quot;Chetu@123456&quot;);</b>
+<b class="fc">&nbsp;        changeAddProperty(&quot;./src/config/config.properties&quot;, &quot;adminURL&quot;, uri.toString());</b>
+<b class="fc">&nbsp;        changeAddProperty(&quot;./src/config/config.properties&quot;, &quot;adminUsername&quot;, &quot;neerajt2@chetu.com&quot;);</b>
+&nbsp;
+<b class="fc">&nbsp;        changeAddProperty(&quot;./src/config/config.properties&quot;, &quot;browser&quot;, &quot;chrome&quot;);</b>
+<b class="fc">&nbsp;        changeAddProperty(&quot;./src/config/config.properties&quot;, &quot;team&quot;, &quot;Vin&quot;);</b>
+<b class="fc">&nbsp;        changeAddProperty(&quot;./src/config/config.properties&quot;, &quot;testCaseType&quot;, &quot;regression&quot;);</b>
+&nbsp;
+<b class="fc">&nbsp;        Thread.sleep(2000);</b>
+<b class="fc">&nbsp;        loadProperties(&quot;config&quot;);</b>
+&nbsp;
+<b class="fc">&nbsp;        browser = prop.getProperty(&quot;browser&quot;);</b>
+<b class="fc">&nbsp;        URL = prop.getProperty(&quot;adminURL&quot;);</b>
+&nbsp;
+<b class="fc">&nbsp;        if (browser.equalsIgnoreCase(&quot;chrome&quot;)) {</b>
+<b class="fc">&nbsp;            System.setProperty(</b>
+&nbsp;                    &quot;webdriver.chrome.driver&quot;,
+&nbsp;                    &quot;src\\drivers\\chromedriver.exe&quot;);
+&nbsp;            // Instantiate a ChromeDriver class.
+<b class="fc">&nbsp;            driver = new ChromeDriver();</b>
+&nbsp;
+&nbsp;
+<b class="nc">&nbsp;        } else if (browser.equalsIgnoreCase(&quot;edge&quot;)) {</b>
+<b class="nc">&nbsp;            WebDriverManager.edgedriver().setup();</b>
+<b class="nc">&nbsp;            driver = new EdgeDriver();</b>
+&nbsp;        } else {
+<b class="nc">&nbsp;            WebDriverManager.firefoxdriver().setup();</b>
+<b class="nc">&nbsp;            driver = new FirefoxDriver();</b>
+&nbsp;        }
+&nbsp;
+<b class="fc">&nbsp;        driver.manage().window().maximize();</b>
+<b class="fc">&nbsp;        driver.get(prop.getProperty(&quot;adminURL&quot;));</b>
+&nbsp;
+<b class="fc">&nbsp;        driver = getDriver();</b>
+<b class="fc">&nbsp;        LoginPage loginPage = new LoginPage(driver);</b>
+&nbsp;
+<b class="fc">&nbsp;        username = prop.getProperty(&quot;adminUsername&quot;);</b>
+<b class="fc">&nbsp;        password = prop.getProperty(&quot;adminPassword&quot;);</b>
+&nbsp;
+<b class="fc">&nbsp;        loginPage.selectDistrict(&quot;Dev&quot;);</b>
+<b class="fc">&nbsp;        loginPage.enterUsername(username);</b>
+&nbsp;
+<b class="fc">&nbsp;        loginPage.enterPassword(password);</b>
+&nbsp;
+<b class="fc">&nbsp;        loginPage.clickLoginButton();</b>
+&nbsp;
+&nbsp;
+&nbsp;    }
+&nbsp;
+&nbsp;    public static Properties loadProperties(String propertiesFile) {
+&nbsp;        FileInputStream fis;
+&nbsp;        try {
+<b class="fc">&nbsp;            fis = new FileInputStream(&quot;./src/config/&quot; + propertiesFile + &quot;.properties&quot;);</b>
+<b class="nc">&nbsp;        } catch (FileNotFoundException e) {</b>
+<b class="nc">&nbsp;            System.out.println(&quot;\n&quot; + &quot;===== Process terminated due to the following error =====&quot; + &quot;\n\n&quot;</b>
+<b class="nc">&nbsp;                    + e.getLocalizedMessage());</b>
+<b class="nc">&nbsp;            throw new RuntimeException(e);</b>
+<b class="fc">&nbsp;        }</b>
+<b class="fc">&nbsp;        prop = new Properties();</b>
+&nbsp;        try {
+<b class="fc">&nbsp;            prop.load(fis);</b>
+<b class="nc">&nbsp;        } catch (IOException e) {</b>
+<b class="nc">&nbsp;            System.out.println(&quot;\n&quot; + &quot;===== Process terminated due to the following error =====&quot; + &quot;\n\n&quot;</b>
+<b class="nc">&nbsp;                    + e.getLocalizedMessage());</b>
+<b class="nc">&nbsp;            throw new RuntimeException(e);</b>
+<b class="fc">&nbsp;        }</b>
+<b class="fc">&nbsp;        return prop;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public WebDriver getDriver() {
+<b class="fc">&nbsp;        return driver;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @AfterTest
+&nbsp;    public void afterSuite() {
+<b class="fc">&nbsp;        getDriver().close();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @AfterSuite
+&nbsp;    public void getRunDetail() {
+<b class="fc">&nbsp;        Details details = new Details();</b>
+<b class="fc">&nbsp;        details.sendDetails();</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-17 18:30</div>
+</div>
+</body>
+</html>

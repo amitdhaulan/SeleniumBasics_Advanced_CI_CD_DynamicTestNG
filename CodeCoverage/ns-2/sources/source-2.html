@@ -1,0 +1,214 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > DynamicTestNGNew</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">org.example.javacore</a>
+</div>
+
+<h1>Coverage Summary for Class: DynamicTestNGNew (org.example.javacore)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">DynamicTestNGNew</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/44)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package org.example.javacore;
+&nbsp;
+&nbsp;import org.testng.TestNG;
+&nbsp;import org.testng.collections.Lists;
+&nbsp;import org.testng.xml.XmlClass;
+&nbsp;import org.testng.xml.XmlSuite;
+&nbsp;import org.testng.xml.XmlTest;
+&nbsp;
+&nbsp;import java.io.*;
+&nbsp;import java.util.*;
+&nbsp;
+&nbsp;//    Creates dynamic testNG file with the user input classes
+<b class="nc">&nbsp;public class DynamicTestNGNew {</b>
+&nbsp;
+&nbsp;    protected static Properties prop;
+&nbsp;    public static String suitName;
+&nbsp;
+&nbsp;
+&nbsp;//    Creates dynamic testNG file with the user input classes
+&nbsp;    public void runTestNGTest(Map&lt;String, String&gt; testngParams) throws IOException {
+&nbsp;
+<b class="nc">&nbsp;        TestNG testNGFile = new TestNG();</b>
+<b class="nc">&nbsp;        XmlSuite mainSuite = new XmlSuite();</b>
+&nbsp;
+<b class="nc">&nbsp;        mainSuite.setName(&quot;Regression Suite: Contains generally all the blocker test cases&quot;);</b>
+<b class="nc">&nbsp;        mainSuite.setParallel(XmlSuite.ParallelMode.METHODS);</b>
+&nbsp;
+<b class="nc">&nbsp;        XmlTest createStudentTest = new XmlTest(mainSuite);</b>
+&nbsp;
+<b class="nc">&nbsp;        List&lt;XmlTest&gt; testScriptsXMLTest = new ArrayList&lt;XmlTest&gt;();</b>
+<b class="nc">&nbsp;        List&lt;XmlClass&gt; testScripts = new ArrayList&lt;XmlClass&gt;();</b>
+&nbsp;
+<b class="nc">&nbsp;        createStudentTest.setName(&quot;SecuredMobility&quot;);</b>
+&nbsp;
+<b class="nc">&nbsp;        for(int i = 1; i&lt;=testngParams.size(); i++){</b>
+<b class="nc">&nbsp;            testScripts.add(new XmlClass(&quot;org.example.testscripts.&quot;+testngParams.get(&quot;class&quot;+i)));</b>
+&nbsp;        }
+&nbsp;
+<b class="nc">&nbsp;        createStudentTest.setXmlClasses(testScripts);</b>
+&nbsp;
+<b class="nc">&nbsp;        testScriptsXMLTest.add(createStudentTest);</b>
+<b class="nc">&nbsp;        mainSuite.setTests(testScriptsXMLTest);</b>
+&nbsp;
+<b class="nc">&nbsp;        List&lt;XmlSuite&gt; XMLSuites = new ArrayList&lt;XmlSuite&gt;();</b>
+<b class="nc">&nbsp;        XMLSuites.add(mainSuite);</b>
+&nbsp;
+<b class="nc">&nbsp;        testNGFile.setXmlSuites(XMLSuites);</b>
+&nbsp;
+<b class="nc">&nbsp;        mainSuite.setFileName(&quot;testng.xml&quot;);</b>
+&nbsp;
+<b class="nc">&nbsp;        mainSuite.setThreadCount(3);</b>
+&nbsp;
+<b class="nc">&nbsp;        testNGFile.run();</b>
+&nbsp;
+<b class="nc">&nbsp;        for (XmlSuite suite : XMLSuites)</b>
+<b class="nc">&nbsp;            createXmlFile(suite);</b>
+<b class="nc">&nbsp;        System.out.println(&quot;File generated successfully.&quot;);</b>
+&nbsp;
+<b class="nc">&nbsp;        Map&lt;String, String&gt; params = createStudentTest.getParameters();</b>
+<b class="nc">&nbsp;        for (Map.Entry&lt;String, String&gt; entry : params.entrySet())</b>
+<b class="nc">&nbsp;            System.out.println(entry.getKey() + &quot; =&gt; &quot; + entry.getValue());</b>
+&nbsp;
+&nbsp;    }
+&nbsp;
+&nbsp;    //This method will create an Xml file based on the XmlSuite data
+&nbsp;    public void createXmlFile(XmlSuite mSuite) {
+&nbsp;        FileWriter writer;
+&nbsp;        try {
+<b class="nc">&nbsp;            writer = new FileWriter(new File(&quot;testng.xml&quot;));</b>
+<b class="nc">&nbsp;            writer.write(mSuite.toXml());</b>
+<b class="nc">&nbsp;            writer.flush();</b>
+<b class="nc">&nbsp;            writer.close();</b>
+&nbsp;            /*System.out.println(new File(&quot;testngOld.xml&quot;).getAbsolutePath());*/
+<b class="nc">&nbsp;        } catch (IOException e) {</b>
+<b class="nc">&nbsp;            e.printStackTrace();</b>
+<b class="nc">&nbsp;        }</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    //Main Method
+&nbsp;    public static void main(String args[]) throws IOException {
+&nbsp;
+&nbsp;//        This is used to get the user inputs: i.e. classes names and is used to generate  the XML file
+<b class="nc">&nbsp;        Scanner numberOfClasses = new Scanner(System.in);</b>
+<b class="nc">&nbsp;        System.out.println(&quot;Enter number of classes&quot;);</b>
+<b class="nc">&nbsp;        int numberOfClassesInt = numberOfClasses.nextInt();;</b>
+<b class="nc">&nbsp;        Scanner myObj = new Scanner(System.in);</b>
+<b class="nc">&nbsp;        DynamicTestNGNew dt = new DynamicTestNGNew();</b>
+&nbsp;
+<b class="nc">&nbsp;        Map&lt;String, String&gt; testngParams = new HashMap&lt;String, String&gt;();</b>
+&nbsp;
+<b class="nc">&nbsp;        for(int i = 1; i &lt;= numberOfClassesInt; i++){</b>
+<b class="nc">&nbsp;            System.out.println(&quot;Enter class Name&quot;);</b>
+<b class="nc">&nbsp;            String className = myObj.nextLine();</b>
+<b class="nc">&nbsp;            testngParams.put(&quot;class&quot;+i, className);</b>
+&nbsp;        }
+&nbsp;
+<b class="nc">&nbsp;        dt.runTestNGTest(testngParams);</b>
+&nbsp;//       ----------------------------------------------------------------
+&nbsp;
+&nbsp;
+&nbsp;//      This is used tp run the test cases from an existing testNG file.
+&nbsp;       /* TestNG testng = new TestNG();
+&nbsp;        List&lt;String&gt; suites = Lists.newArrayList();
+&nbsp;        suites.add(&quot;testng.xml&quot;);
+&nbsp;       *//* suites.add(&quot;testng1.xml&quot;);
+&nbsp;        suites.add(&quot;testng2.xml&quot;);
+&nbsp;        suites.add(&quot;testng3.xml&quot;);*//*
+&nbsp;        testng.setTestSuites(suites);
+&nbsp;        testng.run();*/
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-17 18:30</div>
+</div>
+</body>
+</html>

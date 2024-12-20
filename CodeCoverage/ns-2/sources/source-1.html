@@ -1,0 +1,128 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > Details</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">org.example.javacore</a>
+</div>
+
+<h1>Coverage Summary for Class: Details (org.example.javacore)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Details</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (10/10)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package org.example.javacore;
+&nbsp;
+&nbsp;import org.example.selenium.core.BaseTest;
+&nbsp;import org.json.JSONObject;
+&nbsp;
+&nbsp;import java.util.Properties;
+&nbsp;
+&nbsp;import static org.example.selenium.core.BaseTest.loadProperties;
+&nbsp;
+<b class="fc">&nbsp;public class Details {</b>
+&nbsp;    Properties prop;
+&nbsp;    public void sendDetails(){
+<b class="fc">&nbsp;        prop = loadProperties(&quot;config&quot;);</b>
+&nbsp;
+<b class="fc">&nbsp;        JSONObject jsonObject = new JSONObject();</b>
+<b class="fc">&nbsp;        jsonObject.put(&quot;browser&quot;, prop.getProperty(&quot;browser&quot;));</b>
+<b class="fc">&nbsp;        jsonObject.put(&quot;team&quot;, prop.getProperty(&quot;team&quot;));</b>
+<b class="fc">&nbsp;        jsonObject.put(&quot;testCaseType&quot;, prop.getProperty(&quot;testCaseType&quot;));</b>
+<b class="fc">&nbsp;        jsonObject.put(&quot;PassedTestCases&quot;, BaseTest.passedTestCases.toString());</b>
+<b class="fc">&nbsp;        jsonObject.put(&quot;FailedTestCases&quot;, BaseTest.failedTestCases.toString());</b>
+<b class="fc">&nbsp;        jsonObject.put(&quot;SkippedTestCases&quot;, BaseTest.skippedTestCases.toString());</b>
+&nbsp;
+<b class="fc">&nbsp;        System.out.println(jsonObject.toString());</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-17 18:30</div>
+</div>
+</body>
+</html>

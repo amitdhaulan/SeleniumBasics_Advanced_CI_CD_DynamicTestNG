@@ -1,0 +1,1 @@
+[{"uid":"71e94e4cf115b960","name":"LoginTestCase","time":{"start":1734106495410,"stop":1734106495413,"duration":3},"status":"passed","severity":"blocker"},{"uid":"bf49107fb8cecde9","name":"CreateStudentTestCase","time":{"start":1734106495410,"stop":1734106498809,"duration":3399},"status":"passed","severity":"blocker"}]

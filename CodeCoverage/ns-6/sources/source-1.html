@@ -1,0 +1,147 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > SecuredMobilityCreateStudent</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">org.example.testscripts</a>
+</div>
+
+<h1>Coverage Summary for Class: SecuredMobilityCreateStudent (org.example.testscripts)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">SecuredMobilityCreateStudent</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (16/16)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package org.example.testscripts;
+&nbsp;
+&nbsp;import io.qameta.allure.*;
+&nbsp;import org.example.Listener.ReportListener;
+&nbsp;import org.example.pages.CreateStudentPage;
+&nbsp;import org.example.selenium.core.BaseTest;
+&nbsp;import org.junit.jupiter.api.condition.EnabledIfEnvironmentVariable;
+&nbsp;import org.testng.annotations.Listeners;
+&nbsp;import org.testng.annotations.Test;
+&nbsp;
+&nbsp;@Epic(&quot;#42439&quot;)
+&nbsp;@Feature(&quot;Create student form&quot;)
+&nbsp;@Story(&quot;User is created successfully&quot;)
+&nbsp;@Owner(&quot;Alex/Rocio&quot;)
+&nbsp;@Severity(SeverityLevel.BLOCKER)
+&nbsp;@EnabledIfEnvironmentVariable(named = &quot;Chetu Machine&quot;, matches = &quot;Chetu&quot;, disabledReason = &quot;Disabled&quot;)
+&nbsp;
+&nbsp;@Listeners(value= ReportListener.class)
+&nbsp;public class SecuredMobilityCreateStudent extends BaseTest {
+&nbsp;
+&nbsp;    public SecuredMobilityCreateStudent() {
+<b class="fc">&nbsp;        super();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test(groups ={&quot;regression&quot;}, priority = 0)
+&nbsp;    public static void CreateStudentTestCase() {
+&nbsp;
+<b class="fc">&nbsp;        CreateStudentPage createStudentPage = new CreateStudentPage(driver);</b>
+<b class="fc">&nbsp;        createStudentPage.clickStudents();</b>
+<b class="fc">&nbsp;        createStudentPage.clickStudentSearch();</b>
+<b class="fc">&nbsp;        createStudentPage.clickCreateStudentButton();</b>
+<b class="fc">&nbsp;        createStudentPage.StudentIDWebElement(&quot;12345&quot;);</b>
+<b class="fc">&nbsp;        createStudentPage.StudentFirstNameWebElement(&quot;Test&quot;);</b>
+<b class="fc">&nbsp;        createStudentPage.StudentLastNameWebElement(&quot;User&quot;);</b>
+<b class="fc">&nbsp;        createStudentPage.StudentGradeWebElement(&quot;1230&quot;);</b>
+<b class="fc">&nbsp;        createStudentPage.StudentGenderWebElement(&quot;Male&quot;);</b>
+<b class="fc">&nbsp;        createStudentPage.StudentDOBCalenderWebElement();</b>
+<b class="fc">&nbsp;        createStudentPage.StudentDateOfBirth();</b>
+<b class="fc">&nbsp;        createStudentPage.StudentAddressWebElement(&quot;Address&quot;);</b>
+<b class="fc">&nbsp;        createStudentPage.StudentCityWebElement(&quot;City&quot;);</b>
+<b class="fc">&nbsp;        createStudentPage.StudentStateWebElement(&quot;State&quot;);</b>
+<b class="fc">&nbsp;        createStudentPage.StudentZIPWebElement(&quot;12345&quot;);</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-17 18:30</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="3" parallel="methods" name="Failed suite [Regression Suite]">
+  <test thread-count="3" parallel="methods" name="SecuredMobilityLogin(failed)">
+    <classes>
+      <class name="org.example.testscripts.SecuredMobilityLogin">
+        <methods>
+          <include name="LoginTestCase"/>
+          <include name="setUp"/>
+          <include name="afterSuite"/>
+        </methods>
+      </class> <!-- org.example.testscripts.SecuredMobilityLogin -->
+    </classes>
+  </test> <!-- SecuredMobilityLogin(failed) -->
+</suite> <!-- Failed suite [Regression Suite] -->

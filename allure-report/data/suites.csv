@@ -1,0 +1,3 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","3399","CreateStudentTestCase","Regression Suite: Contains generally all the blocker test cases","Fri Dec 13 21:44:55 IST 2024","passed","Fri Dec 13 21:44:58 IST 2024","org.example.testscripts.SecuredMobilityCreateStudent","SecuredMobility","org.example.testscripts.SecuredMobilityCreateStudent","CreateStudentTestCase"
+"","3","LoginTestCase","Regression Suite: Contains generally all the blocker test cases","Fri Dec 13 21:44:55 IST 2024","passed","Fri Dec 13 21:44:55 IST 2024","org.example.testscripts.SecuredMobilityLogin","SecuredMobility","org.example.testscripts.SecuredMobilityLogin","LoginTestCase"

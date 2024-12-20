@@ -1,0 +1,13 @@
+org\example\javacore\Details.class
+org\example\pages\Allure\AllureAnnotations.class
+org\example\testscripts\SecuredMobilityCreateStudent.class
+org\example\selenium\core\BasePage.class
+org\example\Listener\ListenersTestNG.class
+org\example\Listener\ReportListener.class
+org\example\testscripts\SecuredMobilityLogin.class
+org\example\selenium\core\BaseTest.class
+org\example\pages\SearchStudentPage.class
+org\example\pages\LoginPage.class
+org\example\javacore\UpdateConfigFile.class
+org\example\javacore\DynamicTestNGNew.class
+org\example\pages\CreateStudentPage.class

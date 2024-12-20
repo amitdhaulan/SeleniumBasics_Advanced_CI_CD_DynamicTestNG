@@ -1,0 +1,69 @@
+
+g	java:S112g"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ë¾È·2
+g	java:S112o"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ë¾È·2
+L
+java:S3740"/Provide the parametrized type for this generic.(ñôÑ¦8ñ˜ÁÆ·2
+L
+java:S3740"/Provide the parametrized type for this generic.(ìúª´8ñ˜ÁÆ·2
+L
+java:S3740"/Provide the parametrized type for this generic.(œğ«8ñ˜ÁÆ·2
+L
+java:S3740*"/Provide the parametrized type for this generic.(Ô´„Ï8ñ˜ÁÆ·2
+L
+java:S3740+"/Provide the parametrized type for this generic.(Œ©®»8ò˜ÁÆ·2
+Q
+java:S3740,"/Provide the parametrized type for this generic.(ë¯µıÿÿÿÿÿ8ò˜ÁÆ·2
+|
+java:S11921"_Define a constant instead of duplicating this literal "./src/config/config.properties" 6 times.(í¢ï¤8ó˜ÁÆ·2
+Œ
+java:S1319"oThe type of "passedTestCases" should be an interface such as "List" rather than the implementation "ArrayList".(ñôÑ¦8õ˜ÁÆ·2
+Œ
+java:S1319"oThe type of "failedTestCases" should be an interface such as "List" rather than the implementation "ArrayList".(ìúª´8ö˜ÁÆ·2
+
+java:S1319"pThe type of "skippedTestCases" should be an interface such as "List" rather than the implementation "ArrayList".(œğ«8ö˜ÁÆ·2
+x
+java:S1104"[Make passedTestCases a static final constant or non-public and provide accessors if needed.(ñôÑ¦8÷˜ÁÆ·2
+x
+java:S1104"[Make failedTestCases a static final constant or non-public and provide accessors if needed.(ìúª´8÷˜ÁÆ·2
+y
+java:S1104"\Make skippedTestCases a static final constant or non-public and provide accessors if needed.(œğ«8÷˜ÁÆ·2
+t
+java:S1104$"RMake driver a static final constant or non-public and provide accessors if needed.(ÜçÁÈûÿÿÿÿ8—ÏÜº2
+R
+java:S1444"5Make this "public static passedTestCases" field final(ñôÑ¦8ø˜ÁÆ·2
+R
+java:S1444"5Make this "public static failedTestCases" field final(ìúª´8ø˜ÁÆ·2
+S
+java:S1444"6Make this "public static skippedTestCases" field final(œğ«8ø˜ÁÆ·2
+N
+java:S1444$",Make this "public static driver" field final(ÜçÁÈûÿÿÿÿ8—ÏÜº2
+o
+java:S2095c"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(—Ã›Ûúÿÿÿÿ8Åë¾È·2
+C
+java:S1659&"&Declare "password" on a separate line.(ÑÄ¸‘8 â±ˆ°2
+G
+java:S2386*"*Make member "passedTestCases" "protected".(Ô´„Ï8´™ÁÆ·2
+S
+java:S2696*"6Make the enclosing method "static" or remove this set.(Ô´„Ï8´™ÁÆ·2
+G
+java:S2386+"*Make member "failedTestCases" "protected".(Œ©®»8¶™ÁÆ·2
+S
+java:S2696+"6Make the enclosing method "static" or remove this set.(Œ©®»8¶™ÁÆ·2
+M
+java:S2386,"+Make member "skippedTestCases" "protected".(ë¯µıÿÿÿÿÿ8·™ÁÆ·2
+X
+java:S2696,"6Make the enclosing method "static" or remove this set.(ë¯µıÿÿÿÿÿ8·™ÁÆ·2
+S
+java:S2696;"6Make the enclosing method "static" or remove this set.(ôÚó8¾™ÁÆ·2
+S
+java:S2696B"6Make the enclosing method "static" or remove this set.(Î°¸ó8Ñ™ÁÆ·2
+X
+java:S2696G"6Make the enclosing method "static" or remove this set.(üü ƒıÿÿÿÿ8İë¾È·2
+S
+java:S2696J"6Make the enclosing method "static" or remove this set.(Âéã±8áë¾È·2
+X
+java:S2696P"6Make the enclosing method "static" or remove this set.(•‚×¼øÿÿÿÿ8èë¾È·2
+G	java:S106e"+Replace this use of System.out by a logger.(¢ö­ı8îë¾È·2
+G	java:S106m"+Replace this use of System.out by a logger.(¢ö­ı8óë¾È·2
+d
+java:S1128"BRemove this unused import 'org.example.javacore.UpdateConfigFile'.(–‹š©ÿÿÿÿÿ8ï—ÏÜº2

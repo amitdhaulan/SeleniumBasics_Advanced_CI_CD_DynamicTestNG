@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="3" parallel="methods" name="Failed suite [Regression Suite: Contains generally all the blocker test cases]">
+  <test thread-count="3" parallel="methods" name="SecuredMobility(failed)">
+    <classes>
+      <class name="org.example.testscripts.SecuredMobilityCreateStudent">
+        <methods>
+          <include name="CreateStudentTestCase"/>
+          <include name="setUp"/>
+          <include name="getRunDetail"/>
+          <include name="afterSuite"/>
+        </methods>
+      </class> <!-- org.example.testscripts.SecuredMobilityCreateStudent -->
+    </classes>
+  </test> <!-- SecuredMobility(failed) -->
+</suite> <!-- Failed suite [Regression Suite: Contains generally all the blocker test cases] -->
